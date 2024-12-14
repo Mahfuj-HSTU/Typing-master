@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>alphabet clash</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="./Styles/styles.css" />
+    <link rel="stylesheet" href="./Styles/styles.css" />
   </head>
+
   <body class="font-poppins]">
     <main class="min-h-screen background">
       <!-- *home screen -->
-      <section
-        id="home-screen"
-        class="home min-h-screen text-white flex flex-col justify-center items-center">
+      <section id="home-screen" class="home min-h-screen text-white flex flex-col justify-center items-center">
         <div class="flex flex-col items-center gap-7">
           <h1 class="text-8xl font-anton uppercase">BE A TYPING MASTER</h1>
           <p class="font-semibold text-lg">
             Unleash Your Keyboard Kung Fu : Press “Enter” to Play
           </p>
-          <button
-            onclick="play()"
+          <button id="play-button" onclick="play()"
             class="btn bg-white text-[#010313] hover:bg-violet-800 hover:text-white">
             Play Now
           </button>
         </div>
       </section>
       <!-- *play ground -->
-      <section
-        id="play-ground"
-        class="hidden">
-        <div class="flex flex-col items-center gap-12 pt-12">
+      <section id="play-ground" class="hidden">
+        <div class="flex flex-col items-center gap-16 pt-12">
           <!-- *Screen -->
-          <div
-            class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313cc] bg-[#ffffffb3]">
+          <div class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313cc] bg-[#ffffffb3]">
             <div class="flex justify-center">
               <p class="bg-[#2F2941] px-6 pb-3 rounded-b-xl text-white">
                 Don't watch keyboard while playing...
               </p>
             </div>
-              <!-- *life and score -->
-          <div class="flex justify-between -mt-[35px]">
-            <button class="btn rounded-full bg-[#894189] text-white px-5">
-              Life
-              <img
-                src="./images/Group 23.svg"
-                alt="" />
-              <span id="current-life">5</span>
-            </button>
-            <button class="btn rounded-full bg-[#360490] text-white px-5">
-              Score
-              <img
-                src="./images/monetization_on.svg"
-                alt="" />
-              <span id="current-score">0</span>
-            </button>
-          </div>
+            <!-- *life and score -->
+            <div class="flex justify-between -mt-[35px]">
+              <button class="btn rounded-full bg-[#894189] text-white px-5">
+                Life
+                <img src="./images/Group 23.svg" alt="" />
+                <span id="current-life">5</span>
+              </button>
+              <button class="btn rounded-full bg-[#360490] text-white px-5">
+                Score
+                <img src="./images/monetization_on.svg" alt="" />
+                <span id="current-score">0</span>
+              </button>
+            </div>
             <div class="flex justify-center items-center mt-6">
-              <p
-                id="current-alphabet"
-                class="text-black text-9xl font-bold mb-9">
+              <p id="current-alphabet" class="text-black text-9xl font-bold mb-9">
                 Y
               </p>
             </div>
@@ -74,153 +57,43 @@
           <!-- *keyboard -->
           <div class="mt-5">
             <div class="my-1 flex w-full justify-center gap-2">
-              <kbd
-                id="q"
-                class="kbd text-black bg-white"
-                >q</kbd
-              >
-              <kbd
-                id="w"
-                class="kbd text-black bg-white"
-                >w</kbd
-              >
-              <kbd
-                id="e"
-                class="kbd text-black bg-white"
-                >e</kbd
-              >
-              <kbd
-                id="r"
-                class="kbd text-black bg-white"
-                >r</kbd
-              >
-              <kbd
-                id="t"
-                class="kbd text-black bg-white"
-                >t</kbd
-              >
-              <kbd
-                id="y"
-                class="kbd text-black bg-white"
-                >y</kbd
-              >
-              <kbd
-                id="u"
-                class="kbd text-black bg-white"
-                >u</kbd
-              >
-              <kbd
-                id="i"
-                class="kbd text-black bg-white"
-                >i</kbd
-              >
-              <kbd
-                id="o"
-                class="kbd text-black bg-white"
-                >o</kbd
-              >
-              <kbd
-                id="p"
-                class="kbd text-black bg-white"
-                >p</kbd
-              >
+              <kbd id="q" class="kbd text-black bg-white">q</kbd>
+              <kbd id="w" class="kbd text-black bg-white">w</kbd>
+              <kbd id="e" class="kbd text-black bg-white">e</kbd>
+              <kbd id="r" class="kbd text-black bg-white">r</kbd>
+              <kbd id="t" class="kbd text-black bg-white">t</kbd>
+              <kbd id="y" class="kbd text-black bg-white">y</kbd>
+              <kbd id="u" class="kbd text-black bg-white">u</kbd>
+              <kbd id="i" class="kbd text-black bg-white">i</kbd>
+              <kbd id="o" class="kbd text-black bg-white">o</kbd>
+              <kbd id="p" class="kbd text-black bg-white">p</kbd>
             </div>
             <div class="my-2 flex w-full justify-center gap-2">
-              <kbd
-                id="a"
-                class="kbd text-black bg-white"
-                >a</kbd
-              >
-              <kbd
-                id="s"
-                class="kbd text-black bg-white"
-                >s</kbd
-              >
-              <kbd
-                id="d"
-                class="kbd text-black bg-white"
-                >d</kbd
-              >
-              <kbd
-                id="f"
-                class="kbd text-black bg-white"
-                >f</kbd
-              >
-              <kbd
-                id="g"
-                class="kbd text-black bg-white"
-                >g</kbd
-              >
-              <kbd
-                id="h"
-                class="kbd text-black bg-white"
-                >h</kbd
-              >
-              <kbd
-                id="j"
-                class="kbd text-black bg-white"
-                >j</kbd
-              >
-              <kbd
-                id="k"
-                class="kbd text-black bg-white"
-                >k</kbd
-              >
-              <kbd
-                id="l"
-                class="kbd text-black bg-white"
-                >l</kbd
-              >
+              <kbd id="a" class="kbd text-black bg-white">a</kbd>
+              <kbd id="s" class="kbd text-black bg-white">s</kbd>
+              <kbd id="d" class="kbd text-black bg-white">d</kbd>
+              <kbd id="f" class="kbd text-black bg-white">f</kbd>
+              <kbd id="g" class="kbd text-black bg-white">g</kbd>
+              <kbd id="h" class="kbd text-black bg-white">h</kbd>
+              <kbd id="j" class="kbd text-black bg-white">j</kbd>
+              <kbd id="k" class="kbd text-black bg-white">k</kbd>
+              <kbd id="l" class="kbd text-black bg-white">l</kbd>
             </div>
             <div class="my-1 flex w-full justify-center gap-2">
-              <kbd
-                id="z"
-                class="kbd text-black bg-white"
-                >z</kbd
-              >
-              <kbd
-                id="x"
-                class="kbd text-black bg-white"
-                >x</kbd
-              >
-              <kbd
-                id="c"
-                class="kbd text-black bg-white"
-                >c</kbd
-              >
-              <kbd
-                id="v"
-                class="kbd text-black bg-white"
-                >v</kbd
-              >
-              <kbd
-                id="b"
-                class="kbd text-black bg-white"
-                >b</kbd
-              >
-              <kbd
-                id="n"
-                class="kbd text-black bg-white"
-                >n</kbd
-              >
-              <kbd
-                id="m"
-                class="kbd text-black bg-white"
-                >m</kbd
-              >
-              <kbd
-                id="/"
-                class="kbd text-black bg-white"
-                >/</kbd
-              >
+              <kbd id="z" class="kbd text-black bg-white">z</kbd>
+              <kbd id="x" class="kbd text-black bg-white">x</kbd>
+              <kbd id="c" class="kbd text-black bg-white">c</kbd>
+              <kbd id="v" class="kbd text-black bg-white">v</kbd>
+              <kbd id="b" class="kbd text-black bg-white">b</kbd>
+              <kbd id="n" class="kbd text-black bg-white">n</kbd>
+              <kbd id="m" class="kbd text-black bg-white">m</kbd>
+              <kbd id="/" class="kbd text-black bg-white">/</kbd>
             </div>
           </div>
-        
+
         </div>
       </section>
-      <section
-        id="final-score"
-        class="score flex justify-center items-center min-h-screen">
+      <section id="final-score" class="score flex justify-center items-center min-h-screen">
         <div
           class="text-white text-center space-y-5 bg-gradient-to-l from-[#5400EE] to-[#e753dd] p-12 rounded-xl border-2 border-[#ffffff40]">
           <h2 class="text-xl fonst-semibold">Game Over</h2>
@@ -228,8 +101,8 @@
             <span class="font-extrabold">Your Score: </span>
             <span id="last-score">14</span>
           </h1>
-          <button onclick="play()""
-            class="btn bg-white text-black hover:bg-violet-800 hover:text-white font-semibold px-6">
+          <button id="play-button" onclick="play()""
+            class=" btn bg-white text-black hover:bg-violet-800 hover:text-white font-semibold px-6">
             Play Again
           </button>
           <p>Practice will make you Pro</p>
@@ -239,4 +112,5 @@
     <script src="./scripts/utility.js"></script>
     <script src="./scripts/alphs-clash.js"></script>
   </body>
+
 </html>

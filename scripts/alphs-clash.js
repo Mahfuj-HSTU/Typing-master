@@ -1,14 +1,3 @@
-// function play() {
-//   // step-1: hide the home screen. to hide the screen add the class hidden to the home section
-//   const homeSection = document.getElementById('home-screen');
-//   // console.log(homeSection);
-//   homeSection.classList.add('hidden');
-
-//   // step-2: show the home screen
-//   const playGroundSection = document.getElementById('play-ground');
-//   playGroundSection.classList.remove('hidden');
-// }
-
 function handleKeyboardButtonPress(event) {
   const pressedButton = event.key;
   // console.log('btnPress', pressedButton);
@@ -87,6 +76,13 @@ function play() {
   setTextElementValueById('current-score', 0);
   playingGame();
 }
+
+//* // Add global event listener for the Enter key
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    document.getElementById('play-button').click();
+  }
+});
 
 function gameOver() {
   hideElementById('play-ground');
